@@ -16,5 +16,5 @@ keywords = ["weather", "parse"]
 clap = { version = "3.0.0-beta.2" }
 env_logger = "0.7"
 log = "0.4"
-tokio = { version = "0.2", features = ["macros"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 weather-underground = { path = "../library", version = "0.1" }
