@@ -10,8 +10,6 @@ homepage = "https://github.com/jdrouet/weather-underground"
 repository = "https://github.com/jdrouet/weather-underground"
 keywords = ["weather", "parse"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 lazy_static = "1.4"
 log = "0.4"

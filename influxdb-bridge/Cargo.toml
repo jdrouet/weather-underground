@@ -10,8 +10,6 @@ homepage = "https://github.com/jdrouet/weather-underground"
 repository = "https://github.com/jdrouet/weather-underground"
 keywords = ["weather", "parse", "influxdb"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 env_logger = "0.7"
 influx_db_client = "0.5"
