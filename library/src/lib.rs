@@ -165,7 +165,7 @@ pub fn create_client(timeout: Duration) -> Result<reqwest::Client, reqwest::Erro
 }
 
 /// Fetch the wunderground homepage and parse an api token
-/// 
+///
 /// ```
 /// use std::time::Duration;
 /// use weather_underground as wu;
@@ -187,7 +187,7 @@ pub async fn fetch_api_key(client: &reqwest::Client) -> Result<String, Error> {
 }
 
 /// Fetch observations from the weatherunderground api
-/// 
+///
 /// ```
 /// use std::convert::TryFrom;
 /// use std::time::Duration;
