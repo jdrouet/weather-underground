@@ -10,14 +10,12 @@ homepage = "https://github.com/jdrouet/weather-underground"
 repository = "https://github.com/jdrouet/weather-underground"
 keywords = ["weather", "parse", "influxdb"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 env_logger = "0.7"
-influx_db_client = "0.4"
+influx_db_client = "0.5"
 log = "0.4"
-reqwest = { version = "0.10", features = ["cookies", "gzip", "json", "rustls-tls"] }
+reqwest = { version = "0.11", features = ["cookies", "gzip", "json", "rustls-tls"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-tokio = { version = "0.2", features = ["macros", "time"] }
+tokio = { version = "1", features = ["macros", "time", "rt-multi-thread"] }
 weather-underground = { path = "../library", version = "0.1.1" }

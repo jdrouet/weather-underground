@@ -2,7 +2,7 @@ use crate::influx;
 use crate::settings::Settings;
 use reqwest;
 use std::convert::TryFrom;
-use tokio::time::delay_for;
+use tokio::time;
 use weather_underground as wu;
 
 #[derive(Debug)]
@@ -80,7 +80,7 @@ impl Server {
 
     async fn sleep(&self, settings: &Settings) {
         debug!("sleeping for {:?}", settings.interval);
-        delay_for(settings.interval).await;
+        time::sleep(settings.interval).await;
     }
 
     pub async fn run(

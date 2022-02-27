@@ -10,7 +10,8 @@ use std::convert::TryFrom;
 use std::str::FromStr;
 
 lazy_static! {
-    static ref API_KEY_REGEX: Regex = Regex::new(r"apiKey=([a-z0-9]+)").unwrap();
+    static ref API_KEY_REGEX: Regex =
+	Regex::new(r"observations/current\?apiKey=([a-z0-9]{32})").unwrap();
 }
 
 #[derive(Debug)]
@@ -143,9 +144,8 @@ impl From<serde_json::Error> for Error {
 
 fn parse_api_key(html: &str) -> Result<String, Error> {
     match API_KEY_REGEX
-        .find(html)
-        .map(|found| String::from(found.as_str()))
-        .map(|found| found[7..].into())
+        .captures(html)
+        .map(|caps| String::from(caps.get(1).unwrap().as_str()))
     {
         Some(value) => Ok(value),
         None => Err(Error::ApiKeyNotFound),
@@ -165,7 +165,7 @@ pub fn create_client(timeout: Duration) -> Result<reqwest::Client, reqwest::Erro
 }
 
 /// Fetch the wunderground homepage and parse an api token
-/// 
+///
 /// ```
 /// use std::time::Duration;
 /// use weather_underground as wu;
@@ -187,7 +187,7 @@ pub async fn fetch_api_key(client: &reqwest::Client) -> Result<String, Error> {
 }
 
 /// Fetch observations from the weatherunderground api
-/// 
+///
 /// ```
 /// use std::convert::TryFrom;
 /// use std::time::Duration;

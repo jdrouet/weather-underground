@@ -10,12 +10,11 @@ homepage = "https://github.com/jdrouet/weather-underground"
 repository = "https://github.com/jdrouet/weather-underground"
 keywords = ["weather", "parse"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 lazy_static = "1.4"
 log = "0.4"
+ring = "0.16.20"
 regex = "1"
-reqwest = { version = "0.10", features = ["cookies", "gzip", "json", "rustls-tls"] }
+reqwest = { version = "0.11", features = ["cookies", "gzip", "json", "rustls-tls"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
