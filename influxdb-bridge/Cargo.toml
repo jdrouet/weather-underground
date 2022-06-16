@@ -11,7 +11,7 @@ repository = "https://github.com/jdrouet/weather-underground"
 keywords = ["weather", "parse", "influxdb"]
 
 [dependencies]
-env_logger = "0.7"
+env_logger = "0.9"
 influx_db_client = "0.5"
 log = "0.4"
 reqwest = { version = "0.11", default-features = false, features = ["cookies", "gzip", "json", "rustls-tls"] }

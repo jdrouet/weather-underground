@@ -11,8 +11,8 @@ repository = "https://github.com/jdrouet/weather-underground"
 keywords = ["weather", "parse"]
 
 [dependencies]
-clap = { version = "3.0.0-beta.2" }
-env_logger = "0.7"
+clap = { version = "3.2", features = ["derive"] }
+env_logger = "0.9"
 log = "0.4"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 weather-underground = { path = "../library", version = "0.1" }
